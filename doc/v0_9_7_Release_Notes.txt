@@ -1,0 +1,16 @@
+1)v0.97版本是数据库安全增强与体系改善版本
+2)全面使用PreparedStatement和？占位符设值，提高规范性与安全性
+3)全面清理没有任何作用的参数errorMessage，此参数是从该程序的PHP祖先继承下了的
+4)翻新了MockTest
+5)少量API修改
+6)现在有105个测试方法了，增加了一个
+7)全面测试与截图
+8)欢迎使用与测试
+9)任何问题请联系作者jerry_shen_sjf@qq.com
+10)请用如下用户登录：用户EMPID:160208密码：jerry
+11)请修改数据库配置文件dbconfig.xml
+12)可以启动JUnitEE测试套件 http://localhost:8080/clocksimplejee4/TestServlet
+13)开发环境为Java 7,Tomcat 7和Eclipse JEE4.4版(Luna) 
+
+火鸟
+2014.7.18

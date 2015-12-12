@@ -1,0 +1,12 @@
+# This is a comment
+test.javaforever.clocksimplejee4.test.PrivilegeDaoImplTest
+test.javaforever.clocksimplejee4.test.UserDaoImplTest
+test.javaforever.clocksimplejee4.test.BonusDaoImplTest
+test.javaforever.clocksimplejee4.test.ClockRecordDaoImplTest
+test.javaforever.clocksimplejee4.test.FineDaoImplTest
+test.javaforever.clocksimplejee4.test.LeaveDaoImplTest
+test.javaforever.clocksimplejee4.test.LeaveLeftDaoImplTest
+test.javaforever.clocksimplejee4.test.LeaveLimitDaoImplTest
+test.javaforever.clocksimplejee4.test.LeaveTypeDaoImplTest
+test.javaforever.clocksimplejee4.test.EmployeeTypeDaoImplTest
+test.javaforever.clocksimplejee4.servicetest.ClockRecordServiceTest

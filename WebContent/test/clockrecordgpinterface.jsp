@@ -1,0 +1,82 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List" %>
+<%@page import="com.javaforever.clocksimplejee4.domain.ClockRecord"%>
+<%@page import="com.javaforever.clocksimplejee4.serviceimpl.ClockRecordServiceImpl"%>
+<%@page import="com.javaforever.clocksimplejee4.database.DBConf"%>
+<% if (DBConf.isGpinterfaceOffline()){
+        	throw new ServletException("Test GP interface closed");
+        }%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>ClockRecord Info.</title>
+        <link href="../css/testdefault.css" rel="stylesheet" type="text/css" />
+    </head>   
+    <body>
+        <div id="wrapper">
+        <jsp:include page="../include/header.jsp" />
+            <!-- end div#header -->
+            <div id="page">
+                <div id="content">
+                    <div id="welcome">
+                        <h2><%
+                        	if (session.getAttribute("errorMessage")!= null && !"".equals((String)session.getAttribute("errorMessage"))){
+                            	out.print((String)session.getAttribute("errorMessage"));                            
+                            }
+                            session.setAttribute("errorMessage", null);
+                        %></h2>
+                        <!-- Fetch Rows -->
+                        <table class="aatable">
+                            <tr>
+                                <th>Id</th>
+                                <th>UserId</th>
+                                <th>EmpId</th>    
+                                <th>Timestamp</th>    
+                                <th>Description</th>                             
+                                <th>Operation</th>
+                            </tr>
+                            <%
+		                           long id = 0L;                                      	
+		                   		   List<ClockRecord> clockRecordList = new ClockRecordServiceImpl().listAllClockRecord();
+		                           
+		                           for(int index=0;index < clockRecordList.size();index++){
+		                        	   ClockRecord clockRecord = clockRecordList.get(index);
+		                               out.println("<tr>");
+		                               out.println("<td><form action='../testcontroller/TestEditClockRecordController' method='post'><input type='hidden' name='id' size='6' value='"+clockRecord.getId()+"'/><input type='text' name='id1' size='6' value='"+clockRecord.getId()+"'/></td>");                         
+		                               out.println("<td><input type='text' name='userid' size='6' value='"+clockRecord.getUserId()+"'/></td>");
+		                               out.println("<td><input type='text' name='empid' size='6' value='"+clockRecord.getEmpId()+"'/></td>");
+		                               out.println("<td><input type='text' name='timestamp' size='10' value='"+clockRecord.getTimeStamp()+"'/></td>");
+		                               out.println("<td><textarea type='text' name='description' size='6'/>"+clockRecord.getDescription()+"</textarea></td>"); 
+		                               out.println("<td><input type='hidden' name='id' value='"+clockRecord.getId()+"'/><input type='submit' value='Edit' /></form>"+		                                           
+		                                           "<form action='../testcontroller/TestDeleteClockRecordController' method='post'><input type='hidden' name='id' value='"+clockRecord.getId()+"'/><input type='submit' value='Delete' /></form> </td>");
+		                               out.println("</tr>");
+		                           }
+                            %>
+                            <tr><form action='../testcontroller/TestAddClockRecordController' method='post'>
+                           	  <td><input type='text' name='id' size='6' value=''/></td>
+                           	  <td><input type='text' name='userid' size='6' value=''/></td>
+                              <td><input type='text' name='empid' size='6' value=''/></td>                            
+                              <td><input type='text' name='timestamp' size='10' value=''/></td>
+                              <td><textarea type='text' name='description' size='6'/></textarea></td>                                                         
+                              <td><input type='submit' value='Add ClockRecord' /></td></form>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- end div#welcome -->
+                </div>
+                <!-- end div#content -->
+                <div id="sidebar">   
+                <ul>
+                	<jsp:include page="../include/testnav.jsp"></jsp:include>
+                </ul>                   
+                </div>
+                <!-- end div#sidebar -->
+                <div style="clear: both; height: 1px"></div>
+            </div>
+            <jsp:include page="../include/footer.jsp"/>
+        </div>        
+        <!-- end div#wrapper -->
+    </body>
+</html>

@@ -1,0 +1,12 @@
+1)v0.98版本是测试案例集自动数据库链接回收版
+2)全部测试案例集采用自动数据库链接回收
+3)可以使用JUnit和JUnitEE运行器无限次运行不出错g
+4)欢迎使用与测试
+5)任何问题请联系作者jerry_shen_sjf@qq.com
+6)请用如下用户登录：用户EMPID:160208密码：jerry
+7)请修改数据库配置文件dbconfig.xml
+8)可以启动JUnitEE测试套件 http://localhost:8080/clocksimplejee4/TestServlet
+9)开发环境为Java 7,Tomcat 7和Eclipse JEE4.4版(Luna) 
+
+火鸟
+2015.1.5

@@ -1,0 +1,16 @@
+1)v0.96版本是全面改善更新版
+2)Exception体系清理与简化
+3)Service层控制资源申请
+4)资源自动释放
+5)测试套件全面更新
+6)全面支持java7和Tomcat7
+7)欢迎使用与测试
+8)任何问题请联系作者jerry_shen_sjf@qq.com
+9)请用如下用户登录：用户EMPID:160208密码：jerry
+10)请修改数据库配置文件dbconfig.xml
+11)数据库脚本全面更新
+12)可以启动JUnitEE测试套件 http://localhost:8080/clocksimplejee4/TestServlet
+13)开发环境为Java 7,Tomcat 7和Eclipse JEE4.4版(Luna) 
+
+火鸟
+2014.7.7
